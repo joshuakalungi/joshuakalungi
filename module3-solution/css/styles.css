@@ -1,0 +1,96 @@
+/* Base styling for the page */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    /* padding: 50px; */
+}
+
+
+.navbar-brand {
+  color: black;
+}
+/* .row {
+  padding: 0px;
+}
+
+.column {
+  padding: 0px;
+  text-align: justify;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.insider {
+  background-color: gray;
+  padding: 40px;
+  border: 1px solid #000;
+  max-width: 100%;
+}
+
+.section {
+  position: relative;
+} */
+
+/* .section-title {
+  position: absolute;
+  top: -17px;
+  right: 0px;
+  background-color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.chick {
+  background-color: pink;
+}
+
+.beef {
+  background-color: red;
+}
+
+.sushi {
+  background-color: yellow;
+} */
+
+/* Desktop styling for the page */
+/* @media (min-width: 992px) {
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .col-lg-4 {
+    max-width: 33.33%;
+    padding: 20px;
+    float: left;
+    box-sizing: border-box;
+  }
+} */
+
+/* Tablet styling for the page */
+/* @media screen and (min-width: 768px) and (max-width: 991px) {
+  .col-md-6 {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .col-md-6:nth-child(3) {
+    width: 100%;
+    float: none;
+    clear: both;
+  }
+}  */
+
+
+/* mobile style for the page  */
+/* @media (max-width: 767px) {
+  .col-sm-12 {
+    width: 100%;
+    }
+} */
