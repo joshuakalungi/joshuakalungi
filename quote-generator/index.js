@@ -2,13 +2,8 @@
 // 2. Every time the button gets pressed, a random whole number needs to be generated.
 // 3. The number will be used as a representation of the array index number for the quote array.
 // 4. Once we retrieve the randomly picked quote from the array using our randomly generated whole number, we will place it to the HTML document.
-
-
-//current date declaration
-const currentDate = new Date();
-    
-
-const startTime = () => {
+function startTime() {
+    const currentDate = new Date();
     let hours =currentDate.getHours();
     let minutes = currentDate.getMinutes();
     let seconds = currentDate.getSeconds();
@@ -37,7 +32,7 @@ const startTime = () => {
 }
 
 const checkTime = (minutes) => {
-    if (minutes<10) {minutes= `0${minutes}`};  // add zero in front of numbers < 10
+    if (minutes<10) {minutes = `0${minutes}`};  // add zero in front of numbers < 10
     return minutes;
 }
 
@@ -45,12 +40,11 @@ const checkSeconds =(seconds) => {
     if (seconds <10){seconds=`0${seconds}`};
     return seconds;
 }
-
 // //date
-const startDate = () => {
-   const currentDate = new Date();
+// function startDate() {
+//   var d = new Date();
 //   var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 //   document.getElementById("date").innerHTML = days[d.getDay()]+" | "+[d.getMonth()+1]+"/"+d.getDate()+"/"+d.getFullYear();
-}
+// }
 
 
