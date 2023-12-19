@@ -1,13 +1,85 @@
 /* BASE STYLING */
 * {
     box-sizing: border-box;
-    font-size: 1rem;
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    /* font-family: 'Comic Sans MS' , sans-serif; */
+    color: #333; /* Set a default text color */
+}
+
+body {
+    /* font-family: 'Comic Sans MS' , sans-serif; */
+    background-color: #f5f5f5;
+    line-height: 1.5;
+
 }
 
 
+.menu {
+    font-weight: bolder;
+    text-align: center;
+    /* margin: auto; */
+    margin-top: 40px;
+    justify-content: center;
+    width: 100%;
+}
 
+.outerBox {
+    width: 100vw;
+    height: 100%;
+    align-items: center;
+    margin-top: 40px;
+    font-weight: 500;
+}
 
+.inner {
+    float: left;
+    width: 33.33%; /* Divide by the number of boxes to get them in one line */
+    margin: 0px;
+    padding: 20px;
+    /* background-color: rgb(182, 182, 182);
+    color: #000;  */ 
+}
 
+.box {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 20px;
+    background-color: rgb(182, 182, 182);
+    color: #000;
+    border: 2px solid #000;
+    position: relative; /* Establishes a positioning context for child elements */
+}
+
+.smallBox {
+    width: 40%;
+    margin-bottom: 20px;
+    color: #000;
+    border: 2px solid #000;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+p {
+    font-size: 1.2em;
+    /* font-weight: 500; */
+    margin-top: 40px;
+}
+
+#chicken {
+    background-color: rgb(231, 127, 127);
+}
+
+#beef {
+     background-color: rgb(219, 52, 52);
+}
+
+#sushi {
+    background-color: rgb(219, 241, 89);
+}
 
 
 
