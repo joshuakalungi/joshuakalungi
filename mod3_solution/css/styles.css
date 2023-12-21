@@ -3,6 +3,65 @@
     box-sizing: border-box;
 }
 
+#naved {
+    border: 3px solid #000;
+}
+
+.navbar-default .navbar {
+    border: 3px solid #000;
+    color:#000;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: monospace, serif;
+    background-color: #fff;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+.navbar-default .navbar-nav>li>a:focus {
+    color: #fff;
+    background-color: #000;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #000;
+    border: 2px solid #000;
+}
+
+.navbar-default .navbar-toggle {
+    border: 2px solid #000;
+}
+
+.navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar {
+    border-color: #fff;
+
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    border-color: #fff;
+
+}
+
+
+.navbar-default .navbar-header .navbar-brand {
+    color: #000;
+    font-weight: bold;
+    font-size: 2.5rem;
+    font-family: monospace, serif;
+}
+
+.navbar-brand {
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    font-size: 2rem;
+    font-family: monospace, serif;
+}
+
 h1 {
     margin-bottom: 15px;
     text-align: center;
@@ -10,6 +69,7 @@ h1 {
     font-weight: bolder;
     font-family: monospace, serif;
     font-size: 4rem;
+    color: #000;
 }
 
 h2 {
@@ -20,16 +80,24 @@ h2 {
 
 .container-fluid {
     width: 100%;
-    margin-left: auto;
-    background-color: rgba(117, 114, 121, 0.493);
+    margin: 0 auto;
+    background-color: rgba(117, 114, 121, 0.781);
 }
+
 
 .container {
     width: 80%;
     margin-left: auto;
-    background-color: rgba(117, 114, 121, 0.493);
+    background-color: rgba(117, 114, 121, 0.8);
 }
 
+.container .chicken {
+    color: #000;
+}
+
+.container .content {
+    color: #000;
+} 
 
 
 .col-md {
