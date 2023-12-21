@@ -1,0 +1,110 @@
+/* Base styling */
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 15px;
+    text-align: center;
+    margin-top: 4rem;
+    font-weight: bolder;
+    font-family: monospace, serif;
+    font-size: 4rem;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.container-fluid {
+    width: 100%;
+    margin-left: auto;
+    background-color: rgba(117, 114, 121, 0.493);
+}
+
+.container {
+    width: 80%;
+    margin-left: auto;
+    background-color: rgba(117, 114, 121, 0.493);
+}
+
+
+
+.col-md {
+    margin-left: auto;
+}
+
+p {
+    font-size: 1.5rem;
+    font-family: monospace, serif;
+    font-weight: 500;;
+}
+
+
+
+
+
+/* Tablet view between 768px and 991px*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.3333333333%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+    
+}
+
+/* Mobile view maximum 767px */
+@media (max-width: 767px) {
+  .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5,
+  .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10,
+  .col-xs-11, .col-xs-12 {
+    width: 100%;
+  }
+  .col-xs-1 {
+    width: 8.3333333333%;
+  }
+  .col-xs-2 {
+    width: 16.6666666667%;
+  }
+  .col-xs-3 {
+    width: 25%;
+  }
+  .col-xs-4 {
+    width: 33.3333333333%;
+  }
+  .col-xs-5 {
+    width: 41.6666666667%;
+  }
+  .col-xs-6 {
+    width: 50%;
+  }
+  .col-xs-7 {
+    width: 58.3333333333%;
+  }
+  .col-xs-8 {
+    width: 66.6666666667%;
+  }
+  .col-xs-9 {
+    width: 75%;
+  }
+  .col-xs-10 {
+    width: 83.3333333333%;
+  }
+  .col-xs-11 {
+    width: 91.6666666667%;
+  }
+  .col-xs-12 {
+    width: 100%;
+  }
+    
+}
