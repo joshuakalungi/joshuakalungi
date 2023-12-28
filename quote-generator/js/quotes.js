@@ -1,7 +1,18 @@
 // for me to be able to get quotes, i need a function to help me fetch the qutes using a quotes API
 
+
+// variables to represent the HTML objects
+const quoteContainer = document.getElementById('quote-container');
+const quoteText = document.getElementById('quote');
+const author = document.getElementById('author');
+const quoteBtn = document.getElementById('new-quote');
+
 function newQuote() {
-    console.log(apiQuotes[Math.floor(Math.random() * apiQuotes.length)]);
+    const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+
+    
+
+    quoteBtn.textContent = quote.author;
 } 
 
 
