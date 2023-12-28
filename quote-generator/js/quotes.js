@@ -10,9 +10,9 @@ const quoteBtn = document.getElementById('new-quote');
 function newQuote() {
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
 
-    
+    quoteText.textContent = quote.text;
 
-    quoteBtn.textContent = quote.author;
+    author.textContent = quote.author;
 } 
 
 
@@ -46,21 +46,3 @@ async function getQuotes() {
 getQuotes();
 
 
-
-
-const axios = require('axios');
-
-const options = {
-  method: 'GET',
-  url: 'https://healthruwords.p.rapidapi.com/v1/quotes/',
-  params: {
-    t: 'Wisdom',
-    maxR: '1',
-    size: 'medium',
-    id: '731'
-  },
-  headers: {
-    'X-RapidAPI-Key': '2b9fd93f8bmsh1d5a56fcd44dac9p13d78fjsn15b8988dcccb',
-    'X-RapidAPI-Host': 'healthruwords.p.rapidapi.com'
-  }
-};
