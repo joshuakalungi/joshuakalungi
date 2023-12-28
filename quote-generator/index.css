@@ -45,22 +45,42 @@ body {
     font-weight: 400;
 }
 
+
 .button-container {
     display: flex;
     margin-top: 1rem;
     justify-content: space-between;
 }
 
-.twitter-button {
-    background-color: #1da1f2;
+button {
+    background-color: #000;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.4);
+    outline: none;
+}
+
+button:active {
+    transform: translate(0, 0.3rem);
+}
+
+.twitter-button .fa-twitter {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+
+.twitter-button:hover .fa-twitter {
+    color: #38a1f3;
+}
+
+.new-quote:hover {
+    filter: brightness(110);
 }
 
 
