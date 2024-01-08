@@ -4,18 +4,18 @@ import data from "./data.js"
 export default function Accordian() {
     const [selected, setSelected] = useState("");
 
-    function handleSignalChange(){
-        console.log(dataItem.id);
+    function handleSignalChange(getCurrentId){
+        console.log(getCurrentId);
     }
 
 
     return ( 
         <div className="wrapper">
             <div className="accordian">
-                {
+            {data && data.length >0 ? (   
                     data.map((dataItem)=> {
                         return (
-                            <div className="item">
+                            <div key={dataItem.id} className="item">
                                 <div onClick={() => handleSignalChange(dataItem.id)}   className="title">
                                     <h3>{ dataItem.question }</h3>
                                     <span>+</span>
@@ -23,7 +23,9 @@ export default function Accordian() {
                             </div>
                         )
                     })
-                }
+                ): (
+                <div>No data Found!</div>
+            )}
             </div>
         </div>)
 }
