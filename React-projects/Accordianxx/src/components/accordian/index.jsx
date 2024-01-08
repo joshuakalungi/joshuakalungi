@@ -5,7 +5,7 @@ export default function Accordian() {
     const [selected, setSelected] = useState("");
 
     function handleSignalChange(getCurrentId){
-        console.log(getCurrentId);
+        setSelected(getCurrentId);
     }
 
 
@@ -20,6 +20,13 @@ export default function Accordian() {
                                     <h3>{ dataItem.question }</h3>
                                     <span>+</span>
                                 </div>
+                                {
+                                    selected === dataItem.id ? (
+                                        <div className="content">
+                                            <p>{ dataItem.answer }</p>
+                                        </div>
+                                    ) : null
+                                }
                             </div>
                         )
                     })
