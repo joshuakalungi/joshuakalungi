@@ -4,6 +4,10 @@ import data from "./data.js"
 export default function Accordian() {
     const [selected, setSelected] = useState("");
 
+    function handleSignalChange(){
+        console.log(dataItem.id);
+    }
+
 
     return ( 
         <div className="wrapper">
@@ -12,7 +16,7 @@ export default function Accordian() {
                     data.map((dataItem)=> {
                         return (
                             <div className="item">
-                                <div className="title">
+                                <div onClick={() => handleSignalChange(dataItem.id)}   className="title">
                                     <h3>{ dataItem.question }</h3>
                                     <span>+</span>
                                 </div>
