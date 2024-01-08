@@ -1,11 +1,12 @@
 import { useState } from "react"
 import data from "./data.js"
+import "./styles.css"
 
 export default function Accordian() {
     const [selected, setSelected] = useState("");
 
     function handleSignalChange(getCurrentId){
-        setSelected(getCurrentId);
+        setSelected(getCurrentId === selected ? "" : getCurrentId);
     }
 
 
