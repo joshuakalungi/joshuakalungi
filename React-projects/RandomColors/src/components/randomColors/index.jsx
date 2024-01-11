@@ -8,6 +8,7 @@ export default function RandomColor() {
         return Math.floor(Math.random() *length);
     }
     
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function handleCreateRandomHexColor () {
         const hex = [ 1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
 
@@ -21,6 +22,7 @@ export default function RandomColor() {
         setColor(hexColor);
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function handleCreateRandomRgbColor(){
         const r = randomColorUtility(256);
         const g = randomColorUtility(256);
@@ -32,6 +34,7 @@ export default function RandomColor() {
     useEffect(()=> {
         if (typeOfColor === 'rgb') handleCreateRandomRgbColor()
         else handleCreateRandomHexColor()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[typeOfColor])
 
     return (
