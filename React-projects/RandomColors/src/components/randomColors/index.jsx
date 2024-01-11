@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function RandomColor() {
     const [typeOfColor, setTypeOfColor] = useState("hex"); //default type of color is hex
@@ -22,9 +22,17 @@ export default function RandomColor() {
     }
 
     function handleCreateRandomRgbColor(){
-        // const r = 
+        const r = randomColorUtility(256);
+        const g = randomColorUtility(256);
+        const b = randomColorUtility(256);
 
+        setColor(`rgb(${r},${g},${b})`);
     }
+
+    useEffect(()=> {
+        if (typeOfColor === 'rgb') handleCreateRandomRgbColor()
+        else handleCreateRandomHexColor()
+    },[typeOfColor])
 
     return (
         <>
@@ -53,9 +61,15 @@ export default function RandomColor() {
                 marginTop: '40px',
                 fontWeight: 'bold',
                 position: 'absolute',
-                bottom: '35%',
-                left: '50%',
-        }}>Output</div>
+                bottom: '15%',
+                left: '45%',
+                textAlign: 'center'
+        }}>
+            <h2>Output</h2>
+            <hr/>
+            {typeOfColor}-
+            <span> {color}</span>
+            </div>
         </>
     )
 }
