@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
+import { BsArrowLeftCircleFill }from "react-icons/bs"
 
 // eslint-disable-next-line react/prop-types
 export default function ImageSlider({url,page=1, limit=5 }){
@@ -32,6 +33,7 @@ export default function ImageSlider({url,page=1, limit=5 }){
 
     useEffect(() => {
         if(url !== "") fetchImages(url)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[url])
 
     console.log(images)
@@ -45,6 +47,19 @@ export default function ImageSlider({url,page=1, limit=5 }){
     }
 
     return (
-        <div className="container">Image Slider</div>
+        <div className="container">
+            <BsArrowLeftCircleFill className="arrow arrow-left"/>
+            {
+                images && images.length ? images.map((imageItem)=>(
+                    <img
+                        key={imageItem.id}
+                        alt={imageItem.download_url}
+                        src={imageItem.download_url}
+                        className="current-image"
+                    ></img>
+                )): null 
+            }
+
+        </div>
     )
 }
