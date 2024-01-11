@@ -1,5 +1,6 @@
 import { FaStar } from 'react-icons/fa'
 import { useState } from 'react'
+import './styles.css'
 
 
 // eslint-disable-next-line react/prop-types
@@ -33,6 +34,7 @@ export default function StarRating({ noOfStars = 5 }){
                         onClick={()=> handleClick(index)}
                         onMouseMove={()=> handleMouseMove(index)}
                         onMouseLeave={()=> handleMouseLeave()}
+                        size ={40}
                     />
                 )
              })
