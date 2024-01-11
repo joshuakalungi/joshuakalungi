@@ -26,11 +26,11 @@ export default function StarRating({ noOfStars = 5 }){
             {
                 [...Array(noOfStars)].map((_,index) => {
 
-                    index +=1
+                    index += 1
 
                     return ( <FaStar
                         key={index}
-                        className={index <= hover || rating ? 'active' : 'inactive'}
+                        className={index <= hover || index <= rating ? 'active' : 'inactive'}
                         onClick={()=> handleClick(index)}
                         onMouseMove={()=> handleMouseMove(index)}
                         onMouseLeave={()=> handleMouseLeave()}
