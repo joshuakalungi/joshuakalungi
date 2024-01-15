@@ -31,13 +31,13 @@ export default function ImageSlider({url,page=1, limit=5 }){
         }
     }
 
-    // function handlePrevious(){
-    //     setSlider(slider === 0 ? images.length -1 : slider -1);
-    // }
+    function handlePrevious(){
+        setSlider(slider === 0 ? images.length -1 : slider -1);
+    }
 
-    // function handleNext(){
-    //     setSlider(slider === images.length -1 ? 0 : slider +1);
-    // }
+    function handleNext(){
+        setSlider(slider === images.length -1 ? 0 : slider +1);
+    }
 
 
     useEffect(() => {
@@ -57,32 +57,25 @@ export default function ImageSlider({url,page=1, limit=5 }){
 
     return (
         <div className="container">
-            <BsArrowLeftCircleFill className="arrow arrow-left"/>
-           {/*// {
-            //     images && images.length ? images.map((imageItem)=>(
-            //         <img
-            //             key={imageItem.id}
-            //             alt={imageItem.download_url}
-            //             src={imageItem.download_url}
-            //             className="current-image"
-            //         ></img>
-            //     )): null 
-            /*/ }
-            <BsArrowRightCircleFill className="arrow arrow-right"/>
+            <BsArrowLeftCircleFill onClick={()=> handlePrevious()} className="arrow arrow-left" />
+            {
+                images && images.length ? images.map((imageItem)=>(
+                    <img
+                        key={imageItem.id}
+                        alt={imageItem.download_url}
+                        src={imageItem.download_url}
+                        className="current-image"
+                    ></img>
+                )): null 
+            }
+            <BsArrowRightCircleFill onClick={()=> handleNext()} className="arrow arrow-right"/>
             <span className="circle-indicator">
-               {/*} {
-                    images && images.length ? 
-                    images.map((_,index)=> {
-                        <button className="current-indicator"
-                        key={index}>hallo</button>
-                    }): null
-                }*/}
                 {
                     images && images.length ? 
                         images.map((_,index)=> <button
                             key={index}
                             className="current-indicator"
-                            >hello there</button>)
+                            ></button>)
                     :null
                 }
             </span>
