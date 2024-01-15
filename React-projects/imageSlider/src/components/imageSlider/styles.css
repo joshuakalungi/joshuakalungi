@@ -38,8 +38,8 @@
 
 .current-indicator {
     background-color: #e41818;
-    height: 900px;
-    width: 400px;
+    height: 15px;
+    width: 15px;
     border-radius: 50%;
     border: none;
     outline: none;

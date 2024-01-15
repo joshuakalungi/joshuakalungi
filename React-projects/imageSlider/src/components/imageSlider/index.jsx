@@ -79,7 +79,10 @@ export default function ImageSlider({url,page=1, limit=5 }){
                 }*/}
                 {
                     images && images.length ? 
-                        images.map((_,index)=> <button>hello there</button>)
+                        images.map((_,index)=> <button
+                            key={index}
+                            className="current-indicator"
+                            >hello there</button>)
                     :null
                 }
             </span>
