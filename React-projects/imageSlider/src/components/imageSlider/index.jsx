@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { BsArrowLeftCircleFill }from "react-icons/bs"
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill }from "react-icons/bs"
 
 // eslint-disable-next-line react/prop-types
 export default function ImageSlider({url,page=1, limit=5 }){
@@ -59,7 +59,16 @@ export default function ImageSlider({url,page=1, limit=5 }){
                     ></img>
                 )): null 
             }
-
+            <BsArrowRightCircleFill className="arrow arrow-right"/>
+            <span className="circle-indicator">
+                {
+                    images && images.length ? 
+                    images.map((_,index)=> {
+                        <button className="current-indicator"
+                        key={index}></button>
+                    }): null
+                }
+            </span>
         </div>
     )
 }
