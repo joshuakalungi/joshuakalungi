@@ -10,9 +10,9 @@ export default function LoadMoreData(){
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-    setLoading(true);
-    fetchProducts().finally(() => setLoading(false));
-    },[])
+        setLoading(true);
+        fetchProducts().finally(() => setLoading(false));
+    },[count])
 
 
     async function fetchProducts(){
@@ -24,7 +24,7 @@ export default function LoadMoreData(){
             const result = await response.json();
 
             if(result && result.products && result.products.length){
-                setProducts(result.products);
+                setProducts((prevData)=> [...prevData,...result.products]);
                 setLoading(false);
             }
 
@@ -56,7 +56,7 @@ export default function LoadMoreData(){
         }
     </div>
     <div className="button-container">
-        <button onClick={() => setCount(count - 1)} disabled={count === 0}>Load More Products</button>
+        <button onClick={() => setCount(count + 1)} >Load More Products</button>
     </div>
     </div>
         )
