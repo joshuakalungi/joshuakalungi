@@ -57,27 +57,28 @@ export default function ImageSlider({url,page=1, limit=5 }){
 
     return (
         <div className="container">
-            <BsArrowLeftCircleFill onClick={()=> handlePrevious()} className="arrow arrow-left" />
+            <BsArrowLeftCircleFill onClick={handlePrevious} className="arrow arrow-left" />
             {
-                images && images.length ? images.map((imageItem)=>(
+                images && images.length ? images.map((imageItem, index)=>(
                     <img
                         key={imageItem.id}
                         alt={imageItem.download_url}
                         src={imageItem.download_url}
-                        className="current-image"
+                        className={slider === index? "current-image" : "current-image hide-current-image"}
                     ></img>
                 )): null 
             }
-            <BsArrowRightCircleFill onClick={()=> handleNext()} className="arrow arrow-right"/>
+            <BsArrowRightCircleFill onClick={handleNext} className="arrow arrow-right"/>
             <span className="circle-indicator">
-                {
+                {/*
                     images && images.length ? 
                         images.map((_,index)=> <button
                             key={index}
-                            className="current-indicator"
+                            className={slider === index ? "current-indicator": "current-indicator hide-current-indicator"}
+                            onClick={setSlider(index)}
                             ></button>)
                     :null
-                }
+            */}
             </span>
         </div>
     )
