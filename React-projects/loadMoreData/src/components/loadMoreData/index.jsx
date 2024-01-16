@@ -8,13 +8,9 @@ export default function LoadMoreData(){
     const [products, setProducts] = useState([]);
     const [errorMsg, setErrorMsg] = useState(null);
     const [count, setCount] = useState(0);
+    const [disabled, setDisabled] = useState(false);
 
-    useEffect(() => {
-        setLoading(true);
-        fetchProducts().finally(() => setLoading(false));
-    },[count])
-
-
+    
     async function fetchProducts(){
         try{
             setLoading(true);
@@ -23,8 +19,18 @@ export default function LoadMoreData(){
 
             const result = await response.json();
 
+            console.log(result.products)
+
             if(result && result.products && result.products.length){
-                setProducts((prevData)=> [...prevData,...result.products]);
+                setProducts((prevProducts) => {
+                    // Create a new array that contains only the new products that are not already in prevProducts
+                    const newProducts = result.products.filter(
+                        (product) => !prevProducts.some((prevProduct) => prevProduct.id === product.id)
+                    );
+
+                    // Return a new array that contains all the old products and the new, filtered products
+                    return [...prevProducts, ...newProducts];
+                });
                 setLoading(false);
             }
 
@@ -33,6 +39,15 @@ export default function LoadMoreData(){
             setLoading(false);
         }
     }
+
+    useEffect(() => {
+        fetchProducts();
+    },[ count ])
+
+    useEffect(() => {
+        if (products && products.length ===100) setDisabled(true);
+    },[products])
+
 
     if(loading){
         return <div>Loading Please wait...</div>
@@ -56,7 +71,10 @@ export default function LoadMoreData(){
         }
     </div>
     <div className="button-container">
-        <button onClick={() => setCount(count + 1)} >Load More Products</button>
+        <button disabled={disabled} onClick={() => setCount(count + 1)} >Load More Products</button>
+        {
+            disabled? <div>You reached the end of the list</div> :null
+        }
     </div>
     </div>
         )
