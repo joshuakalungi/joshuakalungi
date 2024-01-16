@@ -8,6 +8,12 @@ export default function LoadMoreData(){
     const [errorMsg, setErrorMsg] = useState(null);
     const [count, setCount] = useState(0);
 
+    useEffect(() => {
+    setLoading(true);
+    fetchProducts().finally(() => setLoading(false));
+    },[])
+
+
     async function fetchProducts(){
         try{
             setLoading(true);
@@ -35,21 +41,16 @@ export default function LoadMoreData(){
         return <div>Error occured! {errorMsg}</div>
     }
 
-    useEffect(() => {
-        fetchProducts()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
-
     return (<div className ="container">
         {
-            console.log(products)}
-        {
-            products && products.length ? products.map((item) => (
+                products && products.length ? products.map((item) => (
                 <div className="product-container" key={item.id}>
                     <img src={item.thumbnail} alt={item.title} />
                     <div className="product-descri"><p>{item.description}</p></div>
                 </div>
-            )): fetchProducts()
+            )): (
+                <div>No products found</div>
+            )
         }
         </div>)
 }
