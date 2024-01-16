@@ -50,3 +50,7 @@
 .hide-current-image {
     display: none;
 }
+
+.inactive-indicator {
+    background-color: gray;
+}

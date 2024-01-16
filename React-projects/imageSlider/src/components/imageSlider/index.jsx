@@ -74,7 +74,7 @@ export default function ImageSlider({url,page=1, limit=5 }){
                     images && images.length ? 
                         images.map((_,index)=> <button
                             key={index}
-                            className={slider === index ? "current-indicator": "current-indicator hide-current-indicator"}
+                            className={slider === index ? "current-indicator": "current-indicator inactive-indicator"}
                             onClick={()=> setSlider(index)}
                             ></button>)
                     :null
