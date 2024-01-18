@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import MenuItem from "./menuItem"
 
 export default function MenuList({ list = []}){
-    return <div>
+    return <ul>
         {
             list && list.length ?
                 list.map((listItem,index) => 
@@ -9,5 +10,5 @@ export default function MenuList({ list = []}){
                     ) : 
                     null
         }
-    </div>
+    </ul>
 }
