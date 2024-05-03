@@ -13,7 +13,14 @@ function newQuote() {
     // passing text content
     quoteText.textContent = quote.text;
     // passing author content
-    author.textContent = quote.author;
+    // check if Author field is blank and replace it with unknown
+    if(!quote.author){
+        author.textContent='Unknown'
+    } else{
+        let authorName = quote.author.split(',');
+        authorName.pop();
+        author.textContent = authorName.join(',');
+    }
 } 
 
 
