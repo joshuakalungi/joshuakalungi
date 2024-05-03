@@ -10,8 +10,6 @@ const twitterBtn = document.getElementById('twitter-button');
 
 function newQuote() {
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
-    // passing text content
-    quoteText.textContent = quote.text;
     // passing author content
     // check if Author field is blank and replace it with unknown
     if(!quote.author){
@@ -21,6 +19,15 @@ function newQuote() {
         authorName.pop();
         author.textContent = authorName.join(',');
     }
+    // check quote length to determine styling
+    if (quote.text.length > 120) {
+        quoteText.classList.add('long-quote');
+    }else {
+        quoteText.classList.remove('long-quote');
+    }
+    // passing text content
+    quoteText.textContent = quote.text;
+    
 } 
 
 
